@@ -211,6 +211,12 @@ main .informacoes .sociais i {
   main .c-content__title {
     font-size: 2.25em;
   }
+  main .c-content__p, main .c-content__ul {
+    font-size: 1rem;
+  }
+  main .informacoes a {
+    font-size: 1rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
