@@ -3,6 +3,7 @@ body, html {
     background: #000;  /* fallback for old browsers */
     background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
     width: 100%;
+    max-width: 100%;
     min-height: 100vh;
     color: $textColor;
 }
@@ -33,6 +34,7 @@ main {
         &__img {
             display: block;
             max-width: 100%;
+            height: auto;
             margin: 1.5rem auto;
             border-radius: 3px;
             box-shadow: 0 2px 8px rgba($color: #000000, $alpha: .25);
