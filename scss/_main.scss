@@ -1,13 +1,9 @@
 body, html {
-    font-family: Kalam, Helvetica, Arial;
+    font-family: 'Open Sans', sans-serif;
     background: #000;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2A5470, #4C4177);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2A5470, #4C4177); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
     width: 100%;
     min-height: 100vh;
-}
-
-h1, p {
     color: $textColor;
 }
 
@@ -29,6 +25,7 @@ main {
         @include align-items(center);
         padding: 0 1em;
         &__title {
+            font-family: Kalam, Helvetica, Arial;
             margin-top: 2.5rem;
             font-size: 3em;
             text-align: center;
@@ -42,11 +39,23 @@ main {
         }
         &__p {
             max-width: 100%;
-            width: 500px;
+            width: 800px;
             line-height: 1.5;
             font-size: 1.2em;
             margin-bottom: 1.5rem;
-            text-indent: 2em;
+            text-indent: 1em;
+        }
+        &__ul {
+          max-width: 100%;
+          width: 800px;
+          line-height: 1.5;
+          font-size: 1.2em;
+          margin-bottom: 1.5rem;
+          list-style: circle;
+          padding-inline-start: 40px;
+        }
+        &__bold {
+          font-weight: 600;
         }
     }
     .informacoes {
