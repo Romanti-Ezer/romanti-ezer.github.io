@@ -108,7 +108,7 @@ table {
 body, html {
   font-family: "Open Sans", sans-serif;
   background: #000; /* fallback for old browsers */
-  background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+  background: linear-gradient(112.1deg, rgb(20, 26, 45) 11.4%, rgb(51, 70, 131) 70.2%);
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
@@ -151,6 +151,19 @@ main .c-content__title {
   margin-top: 2.5rem;
   font-size: 3em;
   text-align: center;
+}
+main .c-content__header {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.75em;
+  font-weight: 600;
+  width: 800px;
+  max-width: 100%;
+}
+main .c-content__text {
+  visibility: hidden;
+  line-height: 0;
+  display: block;
 }
 main .c-content__img {
   display: block;
@@ -210,6 +223,11 @@ main .informacoes .sociais i {
 @media (max-width: 768px) {
   main .c-content__title {
     font-size: 2.25em;
+  }
+  main .c-content__header {
+    font-size: 1.25em;
+    text-align: center;
+    margin: 2rem 0;
   }
   main .c-content__p, main .c-content__ul {
     font-size: 1rem;
