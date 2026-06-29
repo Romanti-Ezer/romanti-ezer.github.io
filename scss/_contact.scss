@@ -1,0 +1,187 @@
+// Contact section
+.c-contact {
+    text-align: center;
+
+    &__tagline {
+        font-size: 1.1rem;
+        color: $color-text-muted;
+        max-width: 480px;
+        margin: 0 auto $space-lg;
+        line-height: 1.6;
+    }
+
+    &__email {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.1rem;
+        color: $color-accent;
+        text-decoration: none;
+        border-bottom: 1px solid $color-accent-border;
+        padding-bottom: 2px;
+        margin-bottom: $space-lg;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__socials {
+        @include flexbox();
+        @include justify-content(center);
+        gap: $space-md;
+        margin-bottom: $space-xl;
+    }
+
+    &__social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 8px;
+        background: $color-card-bg;
+        border: 1px solid $color-border;
+        color: $color-text-muted;
+        font-size: 1.25rem;
+        text-decoration: none;
+        transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+            border-color: $color-accent-border;
+            color: $color-accent;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// Global engagements
+.c-engagements {
+    &__list {
+        @include flexbox();
+        @include flex-direction(column);
+        gap: $space-sm;
+        list-style: none;
+    }
+
+    &__item {
+        @include flexbox();
+        @include align-items(flex-start);
+        gap: $space-sm;
+        background: $color-card-bg;
+        border: 1px solid $color-border;
+        border-radius: 8px;
+        padding: $space-sm $space-md;
+        transition: border-color 0.2s ease;
+
+        &:hover {
+            border-color: $color-accent-border;
+        }
+    }
+
+    &__flag {
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        line-height: 1.4;
+    }
+
+    &__body {
+        @include flexbox();
+        @include flex-direction(column);
+        gap: 0.15rem;
+    }
+
+    &__event {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: $color-text;
+    }
+
+    &__detail {
+        font-size: 0.85rem;
+        color: $color-text-muted;
+    }
+
+    &__year {
+        font-size: 0.8rem;
+        color: $color-text-subtle;
+        white-space: nowrap;
+        margin-left: auto;
+        padding-top: 0.15rem;
+        flex-shrink: 0;
+    }
+}
+
+// Certifications
+.c-certs {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: $space-sm;
+    }
+
+    &__item {
+        background: $color-card-bg;
+        border: 1px solid $color-border;
+        border-radius: 8px;
+        padding: $space-sm $space-md;
+        @include flexbox();
+        @include align-items(flex-start);
+        gap: 0.75rem;
+        transition: border-color 0.2s ease;
+
+        &:hover {
+            border-color: $color-accent-border;
+        }
+    }
+
+    &__icon {
+        color: $color-accent;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+    }
+
+    &__name {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: $color-text;
+        line-height: 1.4;
+    }
+
+    &__issuer {
+        font-size: 0.775rem;
+        color: $color-text-subtle;
+        margin-top: 0.15rem;
+    }
+}
+
+// Footer
+.c-footer {
+    text-align: center;
+    padding: $space-md $space-sm;
+    border-top: 1px solid $color-border;
+    color: $color-text-subtle;
+    font-size: 0.8rem;
+}
+
+// Screen-reader only utility
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// Focus visible
+:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 3px;
+    border-radius: 3px;
+}

@@ -1,0 +1,226 @@
+// Vertical timeline for Experience and Education
+.c-timeline {
+    position: relative;
+
+    // Vertical line
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, $color-accent, rgba($color-accent, 0.1));
+        border-radius: 2px;
+    }
+
+    &__item {
+        position: relative;
+        padding-left: 2.5rem;
+        padding-bottom: $space-xl;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        // Dot on the line
+        &::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: $color-accent;
+            border: 2px solid $color-bg-start;
+            box-shadow: 0 0 0 3px rgba($color-accent, 0.2);
+        }
+    }
+
+    &__meta {
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(space-between);
+        gap: $space-sm;
+        margin-bottom: 0.35rem;
+        flex-wrap: wrap;
+    }
+
+    &__company {
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: $color-accent;
+    }
+
+    &__dates {
+        font-size: 0.8rem;
+        color: $color-text-subtle;
+        white-space: nowrap;
+    }
+
+    &__role {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: $color-text;
+        margin-bottom: $space-xs;
+        @include flexbox();
+        @include align-items(center);
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    &__badge {
+        font-size: 0.7rem;
+        font-weight: 600;
+        padding: 0.2rem 0.6rem;
+        border-radius: 100px;
+        background: $color-accent-subtle;
+        color: $color-accent;
+        border: 1px solid $color-accent-border;
+        letter-spacing: 0.04em;
+    }
+
+    &__bullets {
+        margin: $space-xs 0 $space-sm;
+        padding-left: 1.2rem;
+        list-style: none;
+
+        li {
+            position: relative;
+            color: $color-text-muted;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0.4rem;
+
+            &::before {
+                content: '▸';
+                position: absolute;
+                left: -1.2rem;
+                color: $color-accent;
+                font-size: 0.75rem;
+                top: 0.2rem;
+            }
+        }
+    }
+
+    &__tags {
+        @include flexbox();
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: $space-sm;
+    }
+
+    &__tag {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.65rem;
+        border-radius: 4px;
+        background: $color-card-bg;
+        border: 1px solid $color-border;
+        color: $color-text-muted;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+    }
+
+    // Education variant — smaller
+    &--education {
+        .c-timeline__role {
+            font-size: 1rem;
+        }
+
+        .c-timeline__degree {
+            font-size: 0.9rem;
+            color: $color-text-muted;
+            margin-bottom: 0.25rem;
+        }
+
+        .c-timeline__institution {
+            font-size: 0.85rem;
+            color: $color-text-subtle;
+        }
+    }
+}
+
+// Company grouping (multiple roles at same company)
+.c-timeline__group {
+    &-label {
+        @include flexbox();
+        @include align-items(center);
+        gap: $space-sm;
+        margin-bottom: $space-md;
+        padding-left: 2.5rem;
+        position: relative;
+
+        // Larger dot for group
+        &::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: $color-bg-start;
+            border: 2px solid $color-accent;
+            box-shadow: 0 0 0 4px rgba($color-accent, 0.15);
+        }
+    }
+
+    &-name {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $color-text;
+    }
+
+    &-tenure {
+        font-size: 0.8rem;
+        color: $color-text-subtle;
+        background: $color-card-bg;
+        border: 1px solid $color-border;
+        padding: 0.2rem 0.6rem;
+        border-radius: 100px;
+    }
+
+    &-items {
+        position: relative;
+        padding-left: 2rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: $color-border;
+        }
+
+        .c-timeline__item::before {
+            left: calc(-2rem - 5px);
+            width: 10px;
+            height: 10px;
+            background: $color-bg-start;
+            border-color: $color-accent;
+        }
+    }
+}
+
+// Spacing between group blocks and between a group and a standalone item
+.c-timeline__group + .c-timeline__group,
+.c-timeline__group + .c-timeline__item,
+.c-timeline__item + .c-timeline__group {
+    margin-top: $space-xl;
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .c-timeline {
+        &__meta {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.1rem;
+        }
+    }
+}

@@ -1,2 +1,33 @@
-// Variables
-$textColor: #fff;
+// Colors
+$color-bg-start: rgb(20, 26, 45);
+$color-bg-end: rgb(51, 70, 131);
+$color-accent: #00C9FF;
+$color-accent-subtle: rgba(0, 201, 255, 0.08);
+$color-accent-border: rgba(0, 201, 255, 0.25);
+$color-text: #fff;
+$color-text-muted: rgba(255, 255, 255, 0.65);
+$color-text-subtle: rgba(255, 255, 255, 0.4);
+$color-border: rgba(255, 255, 255, 0.08);
+$color-card-bg: rgba(255, 255, 255, 0.04);
+$color-nav-bg: rgba(20, 26, 45, 0.85);
+
+// Typography
+$font-display: 'Kalam', Helvetica, Arial, sans-serif;
+$font-body: 'Inter', 'Open Sans', sans-serif;
+
+// Breakpoints
+$breakpoint-tablet: 992px;
+$breakpoint-mobile: 768px;
+$breakpoint-small: 480px;
+
+// Spacing scale
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 1.5rem;
+$space-lg: 2.5rem;
+$space-xl: 4rem;
+$space-2xl: 6rem;
+
+// Layout
+$content-max-width: 860px;
+$content-padding: 0 1.5rem;

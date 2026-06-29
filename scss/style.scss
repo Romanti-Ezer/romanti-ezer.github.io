@@ -1,10 +1,18 @@
-// Imports
-@import url('https://fonts.googleapis.com/css?family=Kalam');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Inter:wght@400;500;600;700&display=swap');
+
+// Foundation
 @import 'variables';
 @import 'reset';
 @import 'flexbox';
+
+// Global
 @import 'animations';
-@import 'main';
 
-
+// Components
+@import 'nav';
+@import 'hero';
+@import 'sections';
+@import 'timeline';
+@import 'skills';
+@import 'contact';

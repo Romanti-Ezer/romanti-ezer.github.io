@@ -1,0 +1,193 @@
+// Hero section
+.c-hero {
+    min-height: 100vh;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    padding: 96px $space-md $space-xl;
+    position: relative;
+
+    &__inner {
+        max-width: $content-max-width;
+        width: 100%;
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(space-between);
+        gap: $space-xl;
+    }
+
+    &__text {
+        flex: 1;
+        animation: fadeUp 0.6s ease forwards;
+    }
+
+    &__greeting {
+        font-size: 1rem;
+        color: $color-accent;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: $space-xs;
+        display: block;
+    }
+
+    &__name {
+        font-family: $font-display;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        line-height: 1.1;
+        margin-bottom: $space-xs;
+        color: $color-text;
+    }
+
+    &__title-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: $color-accent-subtle;
+        border: 1px solid $color-accent-border;
+        border-radius: 100px;
+        padding: 0.35rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: $color-accent;
+        margin-bottom: $space-md;
+        letter-spacing: 0.02em;
+    }
+
+    &__tagline {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        line-height: 1.6;
+        color: $color-text-muted;
+        max-width: 560px;
+        margin-bottom: $space-lg;
+    }
+
+    &__ctas {
+        @include flexbox();
+        @include align-items(center);
+        gap: $space-sm;
+        flex-wrap: wrap;
+    }
+
+    &__cta-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: $color-accent;
+        color: $color-bg-start;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+    }
+
+    &__cta-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $color-text;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        border: 1px solid $color-border;
+        font-weight: 500;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+            border-color: $color-accent-border;
+            color: $color-accent;
+            transform: translateY(-1px);
+        }
+    }
+
+    &__photo-wrap {
+        flex-shrink: 0;
+        animation: fadeUp 0.6s 0.15s ease both;
+    }
+
+    &__photo {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid $color-accent-border;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        display: block;
+    }
+
+    // Scroll cue
+    &__scroll {
+        position: absolute;
+        bottom: $space-lg;
+        left: 50%;
+        transform: translateX(-50%);
+        @include flexbox();
+        @include flex-direction(column);
+        @include align-items(center);
+        gap: 0.5rem;
+        color: $color-text-subtle;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        animation: bounce 2s ease-in-out infinite;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .c-hero {
+        &__inner {
+            flex-direction: column-reverse;
+            text-align: center;
+            gap: $space-lg;
+        }
+
+        &__tagline {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__ctas {
+            justify-content: center;
+        }
+
+        &__photo {
+            width: 180px;
+            height: 180px;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .c-hero {
+        padding-top: 80px;
+
+        &__photo {
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
